@@ -17,21 +17,28 @@
                 <a class="navbar-brand" href="/"> BLOG-APP </a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/">Home</a></li>
-                    <!-- <li><a href="/categories/Product">Production</a></li> -->
-                    <!-- <li><a href="/categories/Adverts">Adverting</a></li> -->
-                    <!-- <li><a href="/categories/Interview">Interview</a></li> -->
-                </ul>
-            <ul class="nav navbar-nav navbar-right">
-            {% if current_user.is_authenticated %}
-             <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-             {% else %}
-            <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
-             {%endif%}
-          </ul>
-        </div>
-       </div>
-   </div>
-</body>
-</html>
+              <ul class="nav navbar-nav">
+                  <li><a href="/">Home</a></li>
+                  <li class="nav-item">
+                      <a class="nav-link nav-link-custom" href="{{ url_for('main.new_opinion') }}">Post Opinion</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link nav-link-custom" href="{{ url_for('main.all') }}">All Opinion</a>
+                    </li>
+              </ul>
+            
+              <ul class="nav navbar-nav navbar-right">
+                  {% if current_user.is_authenticated %}
+                  <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
+                  <li><a href="{{url_for('auth.writer_login')}}">Writer Sign in</a></li>
+                  <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+                  {% else %}
+                  <li><a href="{{url_for('auth.login')}}">User Sign in</a></li>
+                  {%endif%}
+              </ul>
+  
+          </div>
+  
+      </div>
+  </div>
+  
