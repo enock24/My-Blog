@@ -20,7 +20,7 @@ class User(UserMixin,db.Model):
     # role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
-    # pitch = db.relationship('Pitches', backref='author', lazy='dynamic')
+    # Blog = db.relationship('Bloges', backref='author', lazy='dynamic')
     pass_secure = db.Column(db.String(255))
     
     @property
