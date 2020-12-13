@@ -15,8 +15,8 @@ def index():
     '''
 
 
-    title = 'Home - Shitandi blog website'
-    content = "WELCOME TO SHITANDI BLOG WEBSITE"
+    title = 'Home - My-blog website'
+    content = "WELCOME TO MY-BLOG WEBSITE"
     quote = get_quote()
 
     return render_template('index.html', title = title,content = content,quote = quote)

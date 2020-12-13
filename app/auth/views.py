@@ -20,7 +20,7 @@ def login():
 
         flash('Invalid username or Password')
 
-    title = "Shitandi blog website"
+    title = "My-blog website"
     return render_template('auth/login.html',login_form = login_form,title=title, quote=quote)
 @auth.route('/login/writer',methods=['GET','POST'])
 def writer_login():
@@ -34,7 +34,7 @@ def writer_login():
 
         flash('Invalid username or Password')
 
-    title = "Shitandi blog website"
+    title = "My-blog website"
     return render_template('auth/writer_login.html',login_form = login_form,title=title, quote=quote)
 
 @auth.route('/register',methods = ["GET","POST"])
@@ -46,7 +46,7 @@ def register():
         db.session.add(user)
         db.session.commit()
 
-        mail_message("Welcome to Joseph Shitandi blog website","email/welcome_user",user.email,user=user)
+        mail_message("Welcome to My-blog website","email/welcome_user",user.email,user=user)
 
         return redirect(url_for('auth.login'))
         title = "New Account"
@@ -61,7 +61,7 @@ def writer_register():
         db.session.add(writer)
         db.session.commit()
 
-        mail_message("Welcome to Joseph Shitandi blog website as a writer","email/welcome_user",writer.writer_email,writer=writer)
+        mail_message("Welcome to My-blog website as a writer","email/welcome_user",writer.writer_email,writer=writer)
 
         return redirect(url_for('auth.writer_login'))
         title = "New Account"
